@@ -1,0 +1,8 @@
+.tytul-miniatury {
+    display: block;
+    margin: 0;
+    padding: 4px 10px;
+
+    background: rgb(96, 125, 139);
+    color: rgb(202, 238, 255);
+}
