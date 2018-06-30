@@ -1,3 +1,16 @@
+body {
+    font-size: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.obraz-miniatury {
+    display: block;
+    width: 100%;
+}
+
 .tytul-miniatury {
     display: block;
     margin: 0;
@@ -5,4 +18,6 @@
 
     background: rgb(96, 125, 139);
     color: rgb(202, 238, 255);
+
+    font-size: 18px;
 }
