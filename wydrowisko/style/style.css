@@ -14,7 +14,13 @@ a {
     font-size: 37px;
 }*/
 
+.lista-miniatur {
+    list-style: none;
+    padding: 0;
+}
+
 .element-listy {
+    display: block;
     border: 1px solid rgb(100%, 100%, 100%);
     border: 1px solid rgba(100%, 100%, 100%, 0.8);
 }
@@ -33,4 +39,8 @@ a {
     color: rgb(202, 238, 255);
 
     font-size: 18px;
+}
+
+.element-listy + .element-listy {
+    margin-top: 10px;
 }
