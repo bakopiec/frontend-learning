@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'jezioro';
+    src: url('czcionki/czcionka_www_jezioro.eot');
+    src: url('czcionki/czcionka_www_jezioro.eot?#iefix') format('embedded-opentype'),
+            url('czcionki/czcionka_www_jezioro.woff') format('woff'),
+            url('czcionki/czcionka_www_jezioro.ttf') format('truetype'),
+            url('czcionki/czcionka_www_jezioro.svg#jezioro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-size: 10px;
     background: rgb(149, 194, 215);
@@ -7,16 +18,21 @@ a {
     text-decoration: none;
 }
 
-/*.tekst-logo {
+.tekst-logo {
     background: white;
     text-align: center;
     text-transform: uppercase;
+    font-family: jezioro;
     font-size: 37px;
-}*/
+}
 
 .lista-miniatur {
     list-style: none;
     padding: 0;
+}
+
+#wydra-bartek {
+    background: green;
 }
 
 .element-listy {
