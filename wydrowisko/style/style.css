@@ -9,7 +9,13 @@
     font-style: normal;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-size: 10px;
     background: rgb(149, 194, 215);
 }
@@ -29,6 +35,9 @@ a {
 .lista-miniatur {
     list-style: none;
     padding: 0;
+
+    white-space: nowrap;
+    overflow-x: auto;
 }
 
 #wydra-bartek {
@@ -36,7 +45,8 @@ a {
 }
 
 .element-listy {
-    display: block;
+    display: inline-block;
+    width: 120px;
     border: 1px solid rgb(100%, 100%, 100%);
     border: 1px solid rgba(100%, 100%, 100%, 0.8);
 }
@@ -59,4 +69,8 @@ a {
 
 .element-listy + .element-listy {
     margin-top: 10px;
+}
+
+.duzy-obraz {
+    width: 90%;
 }
