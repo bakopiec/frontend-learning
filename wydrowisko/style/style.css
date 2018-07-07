@@ -24,6 +24,14 @@ a {
     text-decoration: none;
 }
 
+#wydra-bartek {
+    background: green;
+}
+
+.glowny-tytul {
+    flex: 0 1 auto;
+}
+
 .tekst-logo {
     background: white;
     text-align: center;
@@ -32,7 +40,25 @@ a {
     font-size: 37px;
 }
 
+.glowna-tresc {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.kontener-duzego-obrazu {
+    flex: 1 1 auto;
+}
+
+.duzy-obraz {
+    width: 90%;
+}
+
 .lista-miniatur {
+    flex: 0 1 auto;
+    order: 2;
+    display: flex;
+    justify-content: space-between;
     list-style: none;
     padding: 0;
 
@@ -40,13 +66,10 @@ a {
     overflow-x: auto;
 }
 
-#wydra-bartek {
-    background: green;
-}
-
 .element-listy {
     display: inline-block;
-    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
     border: 1px solid rgb(100%, 100%, 100%);
     border: 1px solid rgba(100%, 100%, 100%, 0.8);
 }
@@ -65,12 +88,4 @@ a {
     color: rgb(202, 238, 255);
 
     font-size: 18px;
-}
-
-.element-listy + .element-listy {
-    margin-top: 10px;
-}
-
-.duzy-obraz {
-    width: 90%;
 }
