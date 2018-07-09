@@ -9,6 +9,17 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'wiatr';
+    src: url('czcionki/czcionka_www_wiatr.eot');
+    src: url('czcionki/czcionka_www_wiatr.eot?#iefix') format('embedded-opentype'),
+            url('czcionki/czcionka_www_wiatr.woff') format('woff'),
+            url('czcionki/czcionka_www_wiatr.ttf') format('truetype'),
+            url('czcionki/czcionka_www_wiatr.svg#jezioro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html, body {
     height: 100%;
 }
@@ -48,10 +59,29 @@ a {
 
 .kontener-duzego-obrazu {
     flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ramka-duzego-obrazu {
+    position: relative;
+    text-align: center;
 }
 
 .duzy-obraz {
     width: 90%;
+}
+
+.tytul-duzego-obrazu {
+    position: absolute;
+    bottom: -16px;
+    left: 4px;
+
+    font-family: wiatr;
+    color: white;
+    text-shadow: rgba(0, 0, 0, 0.9) 1px 2px 9px;
+    font-size: 40px;
 }
 
 .lista-miniatur {
