@@ -119,3 +119,39 @@ a {
 
     font-size: 18px;
 }
+
+.stopka {
+    flex: 0 1 auto;
+}
+
+.tekst-stopki {
+    background: white;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    font-family: jezioro;
+}
+
+@media all and (orientation: landscape) {
+    .glowna-tresc {
+        flex-direction: row;
+        overflow: hidden;
+    }
+    
+    .lista-miniatur {
+        flex-direction: column;
+        margin-left: 20px;
+    }
+
+    .element-listy {
+        max-width: 260px;
+    }
+
+    .kontener-duzego-obrazu {
+        order: 3;
+    }
+
+    .element-listy + .element-listy {
+        margin-top: 20px;
+    }
+}
