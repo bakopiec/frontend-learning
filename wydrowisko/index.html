@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Wydrowisko</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+        <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
         <link rel="stylesheet" href="style/style.css">
         <link rel="icon" type="icon" sizes="32x32" href="favicon.ico">
+        <script src="skrypty/glowny.js" charset="utf-8"></script>
     </head>
     <body>
         <header class="glowny-tytul">
@@ -15,67 +17,49 @@
         <main class="glowna-tresc">
             <div class="kontener-duzego-obrazu">
                 <div class="ramka-duzego-obrazu">
-                    <img class="duzy-obraz" src="obrazy/wydra1.jpg" alt="">
-                    <span class="tytul-duzego-obrazu">Życie jest piękne</span>
+                    <img class="duzy-obraz" src="obrazy/wydra1.jpg" alt="" data-typ-obrazu="cel">
+                    <span class="tytul-duzego-obrazu" data-typ-obrazu="tytul">
+                        Życie jest piękne
+                    </span>
                 </div>
             </div>
             <ul class="lista-miniatur">
                 <li id="wydra-bartek" class="element-listy">
-                    <a href="#">
+                    <a href="obrazy/wydra1.jpg" data-typ-obrazu="wyzwalacz"
+                            data-tytul-obrazu="Życie jest piękne"
+                            data-url-obrazu="obrazy/wydra1.jpg">
                         <img class="obraz-miniatury" src="obrazy/wydra1.jpg" alt="Bartek">
                         <span class="tytul-miniatury">Bartek</span>
                     </a>
                 </li>
                 <li class="element-listy">
-                    <a href="#">
+                    <a href="obrazy/wydra2.jpg" data-typ-obrazu="wyzwalacz"
+                            data-tytul-obrazu="Podobam Ci się?"
+                            data-url-obrazu="obrazy/wydra2.jpg">
                         <img class="obraz-miniatury" src="obrazy/wydra2.jpg" alt="Robin">
                         <span class="tytul-miniatury">Robin</span>
                     </a>
                 </li>
                 <li class="element-listy">
-                    <a href="#">
+                    <a href="obrazy/wydra3.jpg" data-typ-obrazu="wyzwalacz"
+                            data-tytul-obrazu="Odrobina relaksu nie zaszkodzi"
+                            data-url-obrazu="obrazy/wydra3.jpg">
                         <img class="obraz-miniatury" src="obrazy/wydra3.jpg" alt="Moryc">
                         <span class="tytul-miniatury">Moryc</span>
                     </a>
                 </li>
                 <li class="element-listy">
-                    <a href="#">
+                    <a href="obrazy/wydra4.jpg" data-typ-obrazu="wyzwalacz"
+                            data-tytul-obrazu="Chwila wytchnienia"
+                            data-url-obrazu="obrazy/wydra4.jpg">
                         <img class="obraz-miniatury" src="obrazy/wydra4.jpg" alt="Liza">
                         <span class="tytul-miniatury">Liza</span>
                     </a>
                 </li>
                 <li class="element-listy">
-                    <a href="#">
-                        <img class="obraz-miniatury" src="obrazy/wydra5.jpg" alt="Basia">
-                        <span class="tytul-miniatury">Basia</span>
-                    </a>
-                </li>
-                <li class="element-listy">
-                    <a href="#">
-                        <img class="obraz-miniatury" src="obrazy/wydra1.jpg" alt="Bartek">
-                        <span class="tytul-miniatury">Bartek</span>
-                    </a>
-                </li>
-                <li class="element-listy">
-                    <a href="#">
-                        <img class="obraz-miniatury" src="obrazy/wydra2.jpg" alt="Robin">
-                        <span class="tytul-miniatury">Robin</span>
-                    </a>
-                </li>
-                <li class="element-listy">
-                    <a href="#">
-                        <img class="obraz-miniatury" src="obrazy/wydra3.jpg" alt="Moryc">
-                        <span class="tytul-miniatury">Moryc</span>
-                    </a>
-                </li>
-                <li class="element-listy">
-                    <a href="#">
-                        <img class="obraz-miniatury" src="obrazy/wydra4.jpg" alt="Liza">
-                        <span class="tytul-miniatury">Liza</span>
-                    </a>
-                </li>
-                <li class="element-listy">
-                    <a href="#">
+                    <a href="obrazy/wydra5.jpg" data-typ-obrazu="wyzwalacz"
+                            data-tytul-obrazu="Kim jesteś?"
+                            data-url-obrazu="obrazy/wydra5.jpg">
                         <img class="obraz-miniatury" src="obrazy/wydra5.jpg" alt="Basia">
                         <span class="tytul-miniatury">Basia</span>
                     </a>
