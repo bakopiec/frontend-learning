@@ -29,6 +29,17 @@ function zmienObrazNaPodstawieMiniatury(miniatura) {
     zmienObraz(urlObrazu, tytulObrazu);
 }
 
+function odczytajTabliceMiniatur() {
+    var miniatury = document.querySelectorAll(SELEKTOR_MINIATURY);
+    var tablicaMiniatur = [].slice.call(miniatury);
+    return tablicaMiniatur;
+}
+
+pierwszaMiniatura.addEventListener('click', function(zdarzenie) {
+    zdarzenie.preventDefault();
+    zmienObrazNaPodstawieMiniatury(pierwszaMiniatura);
+});
+
 // var LITERY = 'abc';
 // var nic;
 // var cyfra1 = 3;
