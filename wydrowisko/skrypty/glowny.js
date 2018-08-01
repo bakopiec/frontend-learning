@@ -30,15 +30,29 @@ function zmienObrazNaPodstawieMiniatury(miniatura) {
 }
 
 function odczytajTabliceMiniatur() {
+    'use strict';
     var miniatury = document.querySelectorAll(SELEKTOR_MINIATURY);
     var tablicaMiniatur = [].slice.call(miniatury);
     return tablicaMiniatur;
 }
 
-pierwszaMiniatura.addEventListener('click', function(zdarzenie) {
-    zdarzenie.preventDefault();
-    zmienObrazNaPodstawieMiniatury(pierwszaMiniatura);
-});
+function dodajObslugeKliknieciMiniatury(miniatura)  {
+    'use strict';
+    miniatura.addEventListener('click', function(zdarzenie) {
+        zdarzenie.preventDefault();
+        zmienObrazNaPodstawieMiniatury(miniatura);
+    });
+}
+
+function inicjujZarzenia() {
+    'use strict';
+    var miniatury = odczytajTabliceMiniatur();
+    miniatury.forEach(function(element) {
+        dodajObslugeKliknieciMiniatury(element);
+    });
+}
+
+inicjujZarzenia();
 
 // var LITERY = 'abc';
 // var nic;
