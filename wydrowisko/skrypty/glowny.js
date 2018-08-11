@@ -1,6 +1,8 @@
 var SELEKTOR_DUZEGO_OBRAZU = '[data-typ-obrazu="cel"]';
 var SELEKTOR_TYTULU_OBRAZU = '[data-typ-obrazu="tytul"]';
 var SELEKTOR_MINIATURY = '[data-typ-obrazu="wyzwalacz"]';
+var KLASA_UKRYTY_DUZY_OBRAZ = 'ukryty-duzy-obraz';
+var KOD_KLAWISZA = 27;
 
 function zmienObraz(urlObrazu, tekstTytulu) {
     'use strict';
@@ -41,7 +43,29 @@ function dodajObslugeKliknieciMiniatury(miniatura)  {
     miniatura.addEventListener('click', function(zdarzenie) {
         zdarzenie.preventDefault();
         zmienObrazNaPodstawieMiniatury(miniatura);
+        pokazDuzyObraz();
     });
+}
+
+function dodajObslugeKlawiszy() {
+    'use stric';
+    document.body.addEventListener('keyup', function(zdarzenie) {
+        zdarzenie.preventDefault();
+        console.log(zdarzenie.keyCode);
+        if (zdarzenie.keyCode === KOD_KLAWISZA) {
+            ukryjDuzyObraz();
+        }
+    });
+}
+
+function ukryjDuzyObraz() {
+    'use strict';
+    document.body.classList.add(KLASA_UKRYTY_DUZY_OBRAZ);
+}
+
+function pokazDuzyObraz() {
+    'use strict';
+    document.body.classList.remove(KLASA_UKRYTY_DUZY_OBRAZ);
 }
 
 function inicjujZarzenia() {
@@ -50,6 +74,7 @@ function inicjujZarzenia() {
     miniatury.forEach(function(element) {
         dodajObslugeKliknieciMiniatury(element);
     });
+    dodajObslugeKlawiszy();
 }
 
 inicjujZarzenia();
