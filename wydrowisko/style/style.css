@@ -90,7 +90,7 @@ a {
     display: flex;
     justify-content: space-between;
     list-style: none;
-    padding: 0;
+    padding: 20px 0;
 
     white-space: nowrap;
     overflow-x: auto;
@@ -102,6 +102,11 @@ a {
     max-width: 120px;
     border: 1px solid rgb(100%, 100%, 100%);
     border: 1px solid rgba(100%, 100%, 100%, 0.8);
+    transition: transform 133ms;
+}
+
+.element-listy:hover {
+    transform: scale(1.2);
 }
 
 .obraz-miniatury {
@@ -154,6 +159,7 @@ a {
     .lista-miniatur {
         flex-direction: column;
         margin-left: 20px;
+        padding: 0 35px;
     }
 
     .element-listy {
