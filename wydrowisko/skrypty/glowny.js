@@ -1,7 +1,9 @@
 var SELEKTOR_DUZEGO_OBRAZU = '[data-typ-obrazu="cel"]';
 var SELEKTOR_TYTULU_OBRAZU = '[data-typ-obrazu="tytul"]';
 var SELEKTOR_MINIATURY = '[data-typ-obrazu="wyzwalacz"]';
+var SELEKTOR_RAMKI_OBRAZU = '[data-typ-obrazu="ramka"]';
 var KLASA_UKRYTY_DUZY_OBRAZ = 'ukryty-duzy-obraz';
+var REGULA_MALEGO_OBRAZU = 'bardzo-maly-obraz';
 var KOD_KLAWISZA = 27;
 
 function zmienObraz(urlObrazu, tekstTytulu) {
@@ -65,7 +67,12 @@ function ukryjDuzyObraz() {
 
 function pokazDuzyObraz() {
     'use strict';
+    var ramka = document.querySelector(SELEKTOR_RAMKI_OBRAZU);
     document.body.classList.remove(KLASA_UKRYTY_DUZY_OBRAZ);
+    ramka.classList.add(REGULA_MALEGO_OBRAZU);
+    setTimeout(function() {
+        ramka.classList.remove(REGULA_MALEGO_OBRAZU);        
+    }, 50);
 }
 
 function inicjujZarzenia() {
