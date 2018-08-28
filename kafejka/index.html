@@ -2,9 +2,29 @@
     <head>
         <meta charset="utf-8">
         <title>Kafejka</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     </head>
-    <body>
-       
+    <body class="container">
+        <header>
+            <h1>Kafejka</h1>
+        </header>
+        <section>
+            <div class="card">
+                <div class="card-body">
+                    <form data-zamowienie="formularz">
+                        <div class="form-group">
+                            <label for="zamowienieKawy">Zamówienie</label>
+                            <input class="form-control" name="kawa" id="zamowienieKawy" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="daneEmail">Adres e-mail</label>
+                            <input class="form-control" type="email" name="adresEmail"
+                                    id="adresEmail" value="" placeholder="dr@no.com">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </body>
     <script src="skrypty/baza-danych.js" charset="utf-8"></script>
     <script src="skrypty/furgonetka.js" charset="utf-8"></script>
