@@ -1,7 +1,7 @@
 (function(window) {
     'use strict';
 
-    var aplikacja = window.aplikacja || {};
+    var aplikacja = window.Aplikacja || {};
 
     function Furgonetka(identyfikator, bazaDanych) {
         this.identyfikator = identyfikator;
@@ -27,5 +27,5 @@
     }
 
     aplikacja.Furgonetka = Furgonetka;
-    window.aplikacja = aplikacja;
+    window.Aplikacja = aplikacja;
 })(window);

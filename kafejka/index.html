@@ -21,11 +21,45 @@
                             <input class="form-control" type="email" name="adresEmail"
                                     id="adresEmail" value="" placeholder="dr@no.com">
                         </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="wielkosc" value="mała">
+                                Mała
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="wielkosc" value="średnia" checked>
+                                Średnia
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="wielkosc" value="duża">
+                                Duża
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="smakKawy">Smak</label>
+                            <select name="smak" id="smakKawy" class="form-control">
+                                <option value="">Brak</option>
+                                <option value="karmelowy">Karmelowy</option>
+                                <option value="migdalowy">Migdałowy</option>
+                                <option value="czekoladowy">Czekolaowy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="mocKawy">Moc kawy</label>
+                            <input class="form-control" type="range" name="moc" id="mocKawy" value="30">
+                        </div>
+                        <button type="submit" class="btn btn-default">Wyślij</button>
+                        <button type="reset" class="btn btn-default">Resetuj</button>
                     </form>
                 </div>
             </div>
         </section>
     </body>
+    <script src="skrypty/obsluga-formularza.js" charset="utf-8"></script>
     <script src="skrypty/baza-danych.js" charset="utf-8"></script>
     <script src="skrypty/furgonetka.js" charset="utf-8"></script>
     <script src="skrypty/glowny.js" charset="utf-8"></script>

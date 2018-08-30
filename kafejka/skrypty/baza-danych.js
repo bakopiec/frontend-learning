@@ -1,7 +1,7 @@
 (function(window) {
     'use strict';
 
-    var aplikacja = window.aplikacja || {};
+    var aplikacja = window.Aplikacja || {};
 
     function BazaDanych() {
         this.dane = {};
@@ -25,5 +25,5 @@
     }
 
     aplikacja.BazaDanych = BazaDanych;
-    window.aplikacja = aplikacja;
+    window.Aplikacja = aplikacja;
 })(window);
