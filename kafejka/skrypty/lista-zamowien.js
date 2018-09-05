@@ -8,10 +8,15 @@
         if (!selektor) {
             throw Error('Brak selektora');
         }
-        this.$selektor = $(selektor);
-        if (this.$selektor.length === 0) {
+        this.$element = $(selektor);
+        if (this.$element.length === 0) {
             throw Error('Brak elementów odpowiadających selektorowi: ' + selektor);
         }
+    }
+
+    ListaZamowien.prototype.dodajWiersz = function(zamowienie) {
+        var elementWiersza = new Wiersz(zamowienie);
+        this.$element.append(elementWiersza.$element);        
     }
 
     function Wiersz(zamowienie) {
