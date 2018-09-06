@@ -14,27 +14,43 @@
         }
     }
 
+    ListaZamowien.prototype.dodajObslugeKlikniecia = function(fn) {
+        this.$element.on('click', 'input', function(zdarzenie) {
+            var email = zdarzenie.target.value;
+            this.usunWiersz(email);
+            fn(email);
+        }.bind(this));
+    }
+
     ListaZamowien.prototype.dodajWiersz = function(zamowienie) {
+        this.usunWiersz(zamowienie.email);
         var elementWiersza = new Wiersz(zamowienie);
         this.$element.append(elementWiersza.$element);        
     }
 
+    ListaZamowien.prototype.usunWiersz = function(email) {
+        this.$element
+                .find('[value="' + email + '"]')
+                .closest('[data-zamowienie="poleWyboru"]')
+                .remove();
+    }
+
     function Wiersz(zamowienie) {
         var $div = $('<div></div>', {
-            'data-zamowienie': 'pole wyboru',
+            'data-zamowienie': 'poleWyboru',
             'class': 'checkbox'
         });
         var $etykieta = $('<label></label>');
         var $poleWyboru = $('<input></input>', {
             type: 'checkbox',
-            value: zamowienie.adresEmail
+            value: zamowienie.email
         });
         var opis = zamowienie.wielkosc + ' ';
         if (zamowienie.smak) {
             opis += zamowienie.smak + ' ';
         }
         opis += zamowienie.kawa + ', ';
-        opis += '(' + zamowienie.adresEmail + ')';
+        opis += '(' + zamowienie.email + ')';
         opis += '[' + zamowienie.moc + 'x]';
 
         $etykieta.append($poleWyboru);
