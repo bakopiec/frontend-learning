@@ -30,6 +30,14 @@
         });
     }
 
+    ObslugaFormularza.prototype.dodajObslugeZnaku = function(fn) {
+        console.log('Utworzenie obsługi zdarzenia input formularza');
+        this.$elementFormularza.on('input', '[name="email"]', function(zdarzenia) {
+            var email = zdarzenia.target.value;
+            console.log(fn(email));
+        });
+    }
+
     aplikacja.ObslugaFormularza = ObslugaFormularza;
     window.Aplikacja = aplikacja;
 })(window);
