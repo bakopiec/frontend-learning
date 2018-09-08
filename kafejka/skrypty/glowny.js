@@ -8,6 +8,7 @@
     var BazaDanych = Aplikacja.BazaDanych;
     var Furgonetka = Aplikacja.Furgonetka;
     var ObslugaFormularza = Aplikacja.ObslugaFormularza;
+    var Weryfikacja = Aplikacja.Weryfikacja;
     var ListaZamowien = Aplikacja.ListaZamowien;
 
     var listaZamowien = new ListaZamowien(SELEKTOR_LISTY_ZAMOWIEN);
@@ -21,6 +22,7 @@
     console.log(obslugaFormularza);
     listaZamowien.dodajObslugeKlikniecia(
         mojaFurgonetka.zrealizujZamowienie.bind(mojaFurgonetka));
+    obslugaFormularza.dodajObslugeZnaku(Weryfikacja.czyAdresFirmowy);
 
     window.mojaFurgonetka = mojaFurgonetka; 
 })(window);

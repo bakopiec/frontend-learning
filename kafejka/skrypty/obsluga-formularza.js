@@ -34,7 +34,13 @@
         console.log('Utworzenie obsługi zdarzenia input formularza');
         this.$elementFormularza.on('input', '[name="email"]', function(zdarzenia) {
             var email = zdarzenia.target.value;
-            console.log(fn(email));
+            var komunikat = '';
+            if (fn(email)) {
+                zdarzenia.target.setCustomValidity('');
+            } else {
+                komunikat = 'Adres ' + email + ' nie jest dozwolony!';
+                zdarzenia.target.setCustomValidity(komunikat);
+            }
         });
     }
 
