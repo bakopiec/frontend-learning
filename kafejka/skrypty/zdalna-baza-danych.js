@@ -12,7 +12,9 @@
     }
 
     ZdalnaBazaDanych.prototype.dodaj = function(klucz, wartosc) {
-        $.post(this.sciezkaUrl, wartosc);
+        $.post(this.sciezkaUrl, wartosc, function(odpowiedzSerwera) {
+            console.log(odpowiedzSerwera);
+        });
     }
 
     aplikacja.ZdalnaBazaDanych = ZdalnaBazaDanych;
