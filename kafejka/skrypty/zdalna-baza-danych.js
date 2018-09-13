@@ -17,6 +17,12 @@
         });
     }
 
+    ZdalnaBazaDanych.prototype.pobierzWszystko = function(odpowiedzSerwera) {
+        $.get(this.sciezkaUrl, function(odpowiedzSerwera) {
+            console.log(odpowiedzSerwera);
+        });
+    }
+
     aplikacja.ZdalnaBazaDanych = ZdalnaBazaDanych;
     window.Aplikacja = aplikacja;
 })(window);
