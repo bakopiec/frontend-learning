@@ -17,9 +17,23 @@
         });
     }
 
-    ZdalnaBazaDanych.prototype.pobierzWszystko = function(odpowiedzSerwera) {
+    ZdalnaBazaDanych.prototype.pobierzWszystko = function(fzwr) {
         $.get(this.sciezkaUrl, function(odpowiedzSerwera) {
             console.log(odpowiedzSerwera);
+            fzwr(odpowiedzSerwera);
+        });
+    }
+
+    ZdalnaBazaDanych.prototype.pobierz = function(klucz, fzwr) {
+        $.get(this.sciezkaUrl + '/' + klucz, function(odpowiedzSerwera) {
+            console.log(odpowiedzSerwera);
+            fzwr(odpowiedzSerwera);
+        });
+    }
+
+    ZdalnaBazaDanych.prototype.usun = function(klucz) {
+        $.ajax(this.sciezkaUrl + '/' + klucz, {
+            type: 'DELETE'
         });
     }
 

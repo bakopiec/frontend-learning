@@ -3,6 +3,7 @@
 
     var SELEKTOR_FORMULARZA = '[data-zamowienie="formularz"]';
     var SELEKTOR_LISTY_ZAMOWIEN = '[data-zamowienie="listaZamowien"]';
+    var SCIEZKA_URL = 'http://192.168.1.109:8080/zamowienia';
     
     var Aplikacja = window.Aplikacja;
     var BazaDanych = Aplikacja.BazaDanych;
@@ -10,6 +11,7 @@
     var ObslugaFormularza = Aplikacja.ObslugaFormularza;
     var Weryfikacja = Aplikacja.Weryfikacja;
     var ListaZamowien = Aplikacja.ListaZamowien;
+    var ZdalnaBazaDanych = Aplikacja.ZdalnaBazaDanych;
 
     var webshim = window.webshim;
     webshim.polyfill('forms forms-ext');
@@ -17,7 +19,8 @@
 
     var listaZamowien = new ListaZamowien(SELEKTOR_LISTY_ZAMOWIEN);
     var obslugaFormularza = new ObslugaFormularza(SELEKTOR_FORMULARZA);
-    var mojaFurgonetka = new Furgonetka('ncc-1701', new BazaDanych());
+    var zdalnaBazaDanych = new ZdalnaBazaDanych(SCIEZKA_URL);
+    var mojaFurgonetka = new Furgonetka('ncc-1701', zdalnaBazaDanych);
     obslugaFormularza.dodajObslugeWysylki(
             function(dane) {
                 mojaFurgonetka.zlozZamowienie.call(mojaFurgonetka, dane);
