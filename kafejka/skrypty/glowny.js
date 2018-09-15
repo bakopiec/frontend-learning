@@ -21,11 +21,11 @@
     var obslugaFormularza = new ObslugaFormularza(SELEKTOR_FORMULARZA);
     var zdalnaBazaDanych = new ZdalnaBazaDanych(SCIEZKA_URL);
     var mojaFurgonetka = new Furgonetka('ncc-1701', zdalnaBazaDanych);
-    obslugaFormularza.dodajObslugeWysylki(
-            function(dane) {
-                mojaFurgonetka.zlozZamowienie.call(mojaFurgonetka, dane);
-                listaZamowien.dodajWiersz.call(listaZamowien, dane);
+    obslugaFormularza.dodajObslugeWysylki(function(dane) {
+            mojaFurgonetka.zlozZamowienie.call(mojaFurgonetka, dane).then(function() {
+                    listaZamowien.dodajWiersz.call(listaZamowien, dane);
             });
+    });
     console.log(obslugaFormularza);
     listaZamowien.dodajObslugeKlikniecia(
         mojaFurgonetka.zrealizujZamowienie.bind(mojaFurgonetka));

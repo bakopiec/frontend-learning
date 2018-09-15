@@ -10,12 +10,12 @@
 
     Furgonetka.prototype.zlozZamowienie = function(zamowinie) {
         console.log('Złożenie zamówienia dla ' + zamowinie.email);
-        this.bazaDanych.dodaj(zamowinie.email, zamowinie);
+        return this.bazaDanych.dodaj(zamowinie.email, zamowinie);
     }
 
     Furgonetka.prototype.zrealizujZamowienie = function(idKlienta){
         console.log('Zrealizowane zamówienie dla klienta ' + idKlienta);
-        this.bazaDanych.usun(idKlienta);
+        return this.bazaDanych.usun(idKlienta);
     }
 
     Furgonetka.prototype.drukujZamowienie = function() {
