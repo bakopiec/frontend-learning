@@ -24,9 +24,10 @@
                 console.log('Element ' + element.name + ' ma wartość ' + element.value);
             });
             console.log(dane);
-            fn(dane);
-            this.reset();
-            this.elements[0].focus();
+            fn(dane).then(function() {
+                this.reset();
+                this.elements[0].focus();
+            }.bind(this));
         });
     }
 

@@ -2,13 +2,18 @@
     'use strict';
 
     var aplikacja = window.Aplikacja || {};
+    var Obietnica = window.Promise;
 
     function BazaDanych() {
         this.dane = {};
     }
 
     BazaDanych.prototype.dodaj = function(klucz, wartosc) {
-        this.dane[klucz] = wartosc;
+        var obietnica = new Obietnica(function(akceptuj, odrzuc) {
+            this.dane[klucz] = wartosc;
+            akceptuj(null);
+        }.bind(this));
+        return obietnica;
     }
 
     BazaDanych.prototype.pobierz = function(klucz) {

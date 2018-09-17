@@ -22,7 +22,7 @@
     var zdalnaBazaDanych = new ZdalnaBazaDanych(SCIEZKA_URL);
     var mojaFurgonetka = new Furgonetka('ncc-1701', zdalnaBazaDanych);
     obslugaFormularza.dodajObslugeWysylki(function(dane) {
-            mojaFurgonetka.zlozZamowienie.call(mojaFurgonetka, dane).then(function() {
+            return mojaFurgonetka.zlozZamowienie.call(mojaFurgonetka, dane).then(function() {
                     listaZamowien.dodajWiersz.call(listaZamowien, dane);
             });
     });
@@ -31,6 +31,7 @@
         mojaFurgonetka.zrealizujZamowienie.bind(mojaFurgonetka));
     obslugaFormularza.dodajObslugeZnaku(
         Weryfikacja.czyAdresFirmowy, Weryfikacja.czyBezkofeinowaIMoc20);
+    mojaFurgonetka.drukujZamowienie(listaZamowien.dodajWiersz.bind(listaZamowien));
 
     window.mojaFurgonetka = mojaFurgonetka; 
 })(window);

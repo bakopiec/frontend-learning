@@ -18,11 +18,17 @@
         return this.bazaDanych.usun(idKlienta);
     }
 
-    Furgonetka.prototype.drukujZamowienie = function() {
-        var tablicaKlientow = Object.keys(this.bazaDanych.pobierzWszystko());
-        console.log('Furgonetka nr ' + this.identyfikator + ' ma niezrealizowane zamówienia:');
-        tablicaKlientow.forEach(function(id) {
-            console.log(this.bazaDanych.pobierz(id));
+    Furgonetka.prototype.drukujZamowienie = function(funkcjaDrukujaca) {
+        return this.bazaDanych.pobierzWszystko().then(function(zamowienia) {
+            var tablicaKlientow = Object.keys(zamowienia);
+            console.log('Furgonetka nr ' + this.identyfikator + ' ma niezrealizowane zamówienia:');
+            tablicaKlientow.forEach(function(id) {
+                console.log(zamowienia[id]);
+                var zamowienie = zamowienia[id];
+                if (funkcjaDrukujaca) {
+                    funkcjaDrukujaca(zamowienie);
+                }
+            }.bind(this));
         }.bind(this));
     }
 
