@@ -20,7 +20,8 @@
     var listaZamowien = new ListaZamowien(SELEKTOR_LISTY_ZAMOWIEN);
     var obslugaFormularza = new ObslugaFormularza(SELEKTOR_FORMULARZA);
     var zdalnaBazaDanych = new ZdalnaBazaDanych(SCIEZKA_URL);
-    var mojaFurgonetka = new Furgonetka('ncc-1701', zdalnaBazaDanych);
+    var bazaDanych = new BazaDanych();
+    var mojaFurgonetka = new Furgonetka('ncc-1701', bazaDanych);
     obslugaFormularza.dodajObslugeWysylki(function(dane) {
             return mojaFurgonetka.zlozZamowienie.call(mojaFurgonetka, dane).then(function() {
                     listaZamowien.dodajWiersz.call(listaZamowien, dane);
