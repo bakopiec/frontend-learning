@@ -1,18 +1,19 @@
 var http = require('http');
 var fs = require('fs');
-var path = require('path');
+var wyodrebnienie = require('./wyodrebnienie');
+var obsluzBlad = require('./obsluz-blad');
 
 var server = http.createServer(function(zapytanie, odpowiedz) {
     console.log('Odpowiedź na zapytanie');
-    var url = zapytanie.url;
-    var nazwaPliku = 'index.html';
-    if (url.length > 1) {
-        nazwaPliku = url.substring(1);
-    }
-    console.log(nazwaPliku);
-    var sciezkaPliku = path.resolve(__dirname, 'aplikacja', nazwaPliku);
+    var sciezkaPliku = wyodrebnienie(zapytanie.url);
     fs.readFile(sciezkaPliku, function(blad, dane) {
-        odpowiedz.end(dane);
+        if (blad) {
+            obsluzBlad(blad, odpowiedz);
+            return;
+        } else {
+            odpowiedz.setHeader('Content-Type', 'text/html');
+            odpowiedz.end(dane);
+        }
     });
 });
 server.listen(3000);
