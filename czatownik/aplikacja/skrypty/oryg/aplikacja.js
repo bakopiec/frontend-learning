@@ -8,6 +8,13 @@ class CzatAplikacja {
     //Przykładowe użycie konstruktora new CzatAplikacja();
     constructor() {
         gniazdo.inicjuj('ws://localhost:3001');
+        gniazdo.zarejestrujObslugeOtwarcia(() => {
+            let komunikat = new CzatKomunikat({komunikat: 'Hej!'});
+            gniazdo.wyslijKomunikat(komunikat.serializuj());
+        });
+        gniazdo.zarejestrujObslugeKomunikatu((dane) => {
+            console.log(dane);
+        });
     }
 }
 export default CzatAplikacja;
