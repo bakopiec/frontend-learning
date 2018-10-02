@@ -1,4 +1,8 @@
-import gniazdo from "./ws-klient";
+import gniazdo from './ws-klient';
+import {CzatFormularz} from './dom';
+
+const SELEKTOR_FORMULARZA = '[data-czat="czat-formularz"]';
+const SELEKTOR_POLA = '[data-czat="pole-komunikatu"]';
 
 //Moduł zdefinowany jako class
 //To jest definicja
@@ -7,6 +11,7 @@ class CzatAplikacja {
     //Aby stworzyć nową instncję tego modułu trzeba użyć konstruktora
     //Przykładowe użycie konstruktora new CzatAplikacja();
     constructor() {
+        this.czatFormularz = new CzatFormularz(SELEKTOR_FORMULARZA, SELEKTOR_POLA);
         gniazdo.inicjuj('ws://localhost:3001');
         gniazdo.zarejestrujObslugeOtwarcia(() => {
             let komunikat = new CzatKomunikat({komunikat: 'Hej!'});
