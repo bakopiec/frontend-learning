@@ -16,3 +16,36 @@ export class CzatFormularz {
         this.$formularz.find('button').on('click', () => this.$formularz.submit());
     }
 }
+
+export class CzatLista {
+    constructor(selListy, uzytkownik) {
+        this.$lista = $(selListy);
+        this.uzytkownik = uzytkownik;
+    }
+
+    wyswietlKomunikat({uzytkownik: u, czas: c, komunikat: k}) {
+        let $wierszKomunikatu = $('<li>', {
+            'class': 'wiersz-komunikatu'
+        });
+        if (this.uzytkownik === u) {
+            $wierszKomunikatu.addClass('ja');
+        }
+        let $komunikat = $('<p>');
+        $komunikat.append($('<span>', {
+            'class': 'komunikat-uzytkownik',
+            text: u
+        }));
+        $komunikat.append($('<span>', {
+            'class': 'czas',
+            'data-czas': c,
+            text: new Date(c).getTime()
+        }));
+        $komunikat.append($('<span>', {
+            'class': 'komunikat-komunikat',
+            text: k
+        }));
+        $wierszKomunikatu.append($komunikat);
+        $(this.$lista).append($wierszKomunikatu);
+        $wierszKomunikatu.get(0).scrollIntoView();
+    }
+}

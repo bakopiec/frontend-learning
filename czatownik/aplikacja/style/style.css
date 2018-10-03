@@ -49,7 +49,7 @@ ul, ul.panel-body {
   text-align: right;
 }
 
-.komunikat-użytkownik {
+.komunikat-uzytkownik {
   font-weight: bold;
 }
 
@@ -57,7 +57,7 @@ ul, ul.panel-body {
   display: block;
 }
 
-.komunikat-użytkownik + .czas {
+.komunikat-uzytkownik + .czas {
   padding-left: 8px;
 }
 
