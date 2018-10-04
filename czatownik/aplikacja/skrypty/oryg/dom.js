@@ -1,4 +1,15 @@
 import $ from 'jquery';
+import md5 from 'crypto-js/md5';
+
+function utworzUrlGravatara(uzytkownik) {
+    let hash = md5(uzytkownik);
+    return `http://www.gravatar.com/avatar/${hash.toString()}`;
+}
+
+export function wprowadzNazweUzytkownika() {
+    let uzytkownik = prompt('Podaj nazwę użytkownika');
+    return uzytkownik.toLowerCase();
+}
 
 export class CzatFormularz {
     constructor(selFormularza, selPola) {
@@ -44,6 +55,11 @@ export class CzatLista {
             'class': 'komunikat-komunikat',
             text: k
         }));
+        let $obraz = $('<img>', {
+            src: utworzUrlGravatara(u),
+            title: u
+        });
+        $wierszKomunikatu.append($obraz);
         $wierszKomunikatu.append($komunikat);
         $(this.$lista).append($wierszKomunikatu);
         $wierszKomunikatu.get(0).scrollIntoView();
