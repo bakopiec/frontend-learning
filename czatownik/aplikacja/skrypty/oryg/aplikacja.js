@@ -28,6 +28,7 @@ class CzatAplikacja {
                 let komunikat = new CzatKomunikat({komunikat: dane});
                 gniazdo.wyslijKomunikat(komunikat.serializuj());
             });
+            this.czatLista.inicjuj();
         });
         gniazdo.zarejestrujObslugeKomunikatu((dane) => {
             console.log(dane);

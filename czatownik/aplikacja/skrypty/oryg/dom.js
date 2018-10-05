@@ -1,5 +1,7 @@
 import $ from 'jquery';
 import md5 from 'crypto-js/md5';
+import moment from 'moment';
+require('moment/locale/pl');
 
 function utworzUrlGravatara(uzytkownik) {
     let hash = md5(uzytkownik);
@@ -49,7 +51,7 @@ export class CzatLista {
         $komunikat.append($('<span>', {
             'class': 'czas',
             'data-czas': c,
-            text: new Date(c).getTime()
+            text: moment(c).fromNow()
         }));
         $komunikat.append($('<span>', {
             'class': 'komunikat-komunikat',
@@ -63,5 +65,16 @@ export class CzatLista {
         $wierszKomunikatu.append($komunikat);
         $(this.$lista).append($wierszKomunikatu);
         $wierszKomunikatu.get(0).scrollIntoView();
+    }
+
+    inicjuj() {
+        this.zegar = setInterval(() => {
+            $('[data-czas]').each((indeks, element) => {
+                let $element = $(element);
+                let znacznik = new Date().setTime($element.attr('data-czas'));
+                let odstep = moment(znacznik).fromNow();
+                $element.html(odstep);
+            });
+        }, 1000);
     }
 }
