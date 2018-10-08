@@ -1,2 +1,26 @@
 lista-ksiazek/
 czatownik/node_modules/
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/tropiciel/dist/
+/tropiciel/tmp/
+
+# dependencies
+/tropiciel/bower_components/
+/tropiciel/node_modules/
+
+# misc
+/tropiciel/.sass-cache
+/tropiciel/connect.lock
+/tropiciel/coverage/
+/tropiciel/libpeerconnection.log
+/tropiciel/npm-debug.log*
+/tropiciel/testem.log
+/tropiciel/yarn-error.log
+
+# ember-try
+/tropiciel/.node_modules.ember-try/
+/tropiciel/bower.json.ember-try
+/tropiciel/package.json.ember-try
