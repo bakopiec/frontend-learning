@@ -7,6 +7,16 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('obserwacje', function() {
+    this.route('nowa');
+  });
+  this.route('obserwacja', function() {
+    this.route('edycja');
+  });
+  this.route('stwory');
+  this.route('stwor');
+  this.route('swiadkowie');
+  this.route('swiadek');
 });
 
 export default Router;

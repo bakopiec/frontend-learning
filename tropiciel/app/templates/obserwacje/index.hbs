@@ -1,0 +1,9 @@
+<div class="panel panel-default">
+    <ul class="list-group">
+        {{#each model as |obserwacja|}}
+        <li class="list-group-item">
+            {{obserwacja.miejsce}} - {{obserwacja.dataObserwacji}}
+        </li>
+        {{/each}}
+    </ul>
+</div>
