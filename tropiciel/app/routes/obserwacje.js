@@ -2,37 +2,20 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     model() {
-        return [
-            {
-                id: 1,
-                miejsce: 'Szczebrzeszyn',
-                dataObserwacji: new Date('2016-11-07')
-            },
-            {
-                id: 2,
-                miejsce: 'Szczebrzeszyn',
-                dataObserwacji: new Date('2016-11-07')
-            },
-            {
-                id: 3,
-                miejsce: 'Szczebrzeszyn',
-                dataObserwacji: new Date('2016-11-07')
-            },
-            {
-                id: 4,
-                miejsce: 'Szczebrzeszyn',
-                dataObserwacji: new Date('2016-11-07')
-            },
-            {
-                id: 5,
-                miejsce: 'Szczebrzeszyn',
-                dataObserwacji: new Date('2016-11-07')
-            },
-            {
-                id: 6,
-                miejsce: 'Szczebrzeszyn',
-                dataObserwacji: new Date('2016-11-07')
-            }
-        ];
+        let rekord1 = this.store.createRecord('obserwacja', {
+            miejsce: 'Szczebrzeszyn',
+            dataObserwacji: new Date('2016-11-09')
+        });
+        rekord1.set('miejsce', 'Pcim, Polska');
+        console.log('Rekord 1, Miejsce: ' + rekord1.get('miejsce'));
+        let rekord2 = this.store.createRecord('obserwacja', {
+            miejsce: 'Pacanów',
+            dataObserwacji: new Date('2016-10-14')
+        });
+        let rekord3 = this.store.createRecord('obserwacja', {
+            miejsce: 'Wąchock',
+            dataObserwacji: new Date('2016-09-21')
+        });
+        return [rekord1, rekord2, rekord3];
     }
 });
