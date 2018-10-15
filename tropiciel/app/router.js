@@ -14,7 +14,7 @@ Router.map(function() {
     this.route('edycja');
   });
   this.route('stwory');
-  this.route('stwor');
+  this.route('stwor', {path: 'stwory/:stwor_id'});
   this.route('swiadkowie');
   this.route('swiadek');
 });
