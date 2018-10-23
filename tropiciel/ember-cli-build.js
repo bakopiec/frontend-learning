@@ -17,6 +17,8 @@ module.exports = function(defaults) {
   // i dodanie ich do aplikacji za pomocą metody import
 
   app.import(folderBootstrap + 'javascripts/bootstrap.js');
+  app.import('bower_components/moment/moment.js');
+  app.import('bower_components/moment/locale/pl.js');
 
   return app.toTree();
 };
